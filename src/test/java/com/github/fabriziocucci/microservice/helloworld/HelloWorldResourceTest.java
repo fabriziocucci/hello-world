@@ -17,7 +17,7 @@ public class HelloWorldResourceTest extends JerseyTest {
 	@Test
 	public void test() {
 		String response = target("/hello-world").request().get(String.class);
-		assertEquals("Hello World?", response); // I want to see the test fail!
+		assertEquals("Hello World!", response);
 	}
 
 }
