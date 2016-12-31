@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.github.fabriziocucci.microservice.helloworld.HelloWorldApplication'
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.2.4'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'org.glassfish.jersey.containers:jersey-container-grizzly2-http:2.24.1'
+}
